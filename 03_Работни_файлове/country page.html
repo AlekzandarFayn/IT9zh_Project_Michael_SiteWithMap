@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+
+.blur{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  z-index: 9998;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 9999;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(39, 66, 107,1) 0%,
+    rgba(39, 66, 107,0.6) 40%,
+    rgba(39, 66, 107,0) 100%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.text-links{
+font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.text-links:hover {
+  color:  rgb(26, 54, 87);
+}
+.searchbar{
+border-radius:15px;
+width: 120px;
+height:30px;
+font-size: 20px;
+font-family: "Times New Roman";
+transition: 0.2s;
+}
+.searchbar:hover{
+background-color: rgb(175, 175, 175);
+}
+
+main{
+background:  rgb(23, 60, 83);
+}
+.country-card{
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.country-name{
+  
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0,0,0,0.7);
+  z-index: 10;
+  display: inline-block;      /* най-важното */
+  transition: transform 0.25s ease;
+}
+.country-name:hover
+{
+transform:translateX(-50%) scale(1.15) translateY(-5px);
+}
+.content-box{
+max-width: 900px;
+ padding: 40px;         /* вътрешно разстояние */
+  background: white;     /* черната лента */
+  color: black;
+  margin: auto;
+  
+  box-shadow:80px rgba(0,0,0,0.5);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border-radius:15px;
+}
+
+.content-box:hover {
+  transform: scale(1.03); /* леко уголемяване */
+  box-shadow:
+    -50px 0 100px rgba(0,0,0,0.6),
+     50px 0 100px rgba(0,0,0,0.6);
+  
+}
+.subheading{
+text-align: left;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  }
+.text{
+max-width: 900px;      /* ширината на лентата */
+  font-style:default;
+  padding: 40px;         /* вътрешно разстояние */
+  background: white;     /* черната лента */
+  color: black;
+  
+  font-size: 18px;
+  line-height: 1.6;
+  }
+.small-images-history
+{
+display: flex;
+  justify-content: center;   /* centers the pair inside the box */
+  gap: 20px;                 /* space between the two images */
+  margin: 20px 0;
+  
+}
+
+.history-img
+{
+border-radius: 8px;
+
+}	 
+.centered-img{
+ display: flex;
+  justify-content: center;   /* центрира хоризонтално */
+  margin: 20px 0;}
+.nature-imgs{
+max-width: 100%;           /* да не излиза от content-box */
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+ 
+</style>
+<head>
+
+  <title>About Bulgaria</title>
+</head>
+<body>
+<div class = "blur"></div>/*tva ti e za blura*/
+ <header>
+ 
+ <nav class = "nav-bar">
+ <div class = "logo">
+ <img alt = "Logo" >
+ </div>
+ 
+ <div class = "nav-center">
+ <a class = "text-links"> Map </a>
+ 
+ <button class = "searchbar">
+Search Bar
+ </button>
+ <a class = "text-links"> About Us </a>
+ </div>
+ <div class = "list">
+ </div>
+ </nav>
+ 
+ </header>
+  
+  <main>
+  <section class="country-card">
+  <img src="bulgaria.jpg" class="image">
+  
+  <h1 class="country-name">BULGARIA</h1>
+</section>
+
+<section class = "content-box">
+<h1 class = "subheading">History</h1>
+<p class = "text">smth smth smth smth smth smth smth smth smth smth smth
+ smth smth smth smth smth smth smth smth smth smth smth smth smth smth smth
+ smth smth smth smth smth smth smth smth smth smth smth smth smth smth smth
+ smth smth smth smth smth smth smth smth smth smth smth smth smth smth smth
+ smth smth smth smth smth smth smth smth smth smth smth smth smth smth smth
+ smth smth smth smth smth smth smth smth smth smth smth smth smth smth smth
+ smth smth smth smth smth smth smth smth smth smth smth smth smth smth </p>
+ <div class = "small-images-history">
+ <img  src = "history.png" class = "history-img">
+ <img src = "Tsar Simeon.jpg" class= "history-img">
+ </div>
+<h2 class = "subheading">Natural wonders</h2>
+<p class = "text">Belogradchishki rocks, Belogradchishki rocks, Belogradchishki rocks,
+ Belogradchishki rocks, Belogradchishki rocks, Belogradchishki rocks, Belogradchishki rocks,
+ Belogradchishki rocks, Belogradchishki rocks, Belogradchishki rocks, Belogradchishki rocks,
+ Belogradchishki rocks, Belogradchishki rocks, Belogradchishki rocks, Belogradchishki rocks,
+ Belogradchishki rocks, Belogradchishki rocks, Belogradchishki rocks, Belogradchishki rocks,
+ Belogradchishki rocks,</p> 
+ <div class = "centered-img">
+ <img src = "Belogradchik Rocks.jpg" class = "nature-imgs">  
+ </div>
+ </section>
+  </main>
+<footer>
+</footer>
+</body>
+</html>

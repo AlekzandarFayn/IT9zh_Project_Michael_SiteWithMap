@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+.blur{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  z-index: 9998;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 9999;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(39, 66, 107,1) 0%,
+    rgba(39, 66, 107,0.6) 40%,
+    rgba(39, 66, 107,0) 100%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.text-links{
+font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.text-links:hover {
+  color:  rgb(26, 54, 87);
+}
+.searchbar{
+border-radius:15px;
+width: 120px;
+height:30px;
+font-size: 20px;
+font-family: "Times New Roman";
+}
+.searchbar:hover{
+background-color: rgb(175, 175, 175);
+}
+
+
+
+
+
+ 
+</style>
+<head>
+
+  <title>EU Map</title>
+</head>
+<body>
+<div class = "blur"></div>//tva ti e za blura
+ <header>
+ 
+ <nav class = "nav-bar">
+ <div class = "logo">
+ <img alt = "Logo" >
+ </div>
+ 
+ <div class = "nav-center">
+ <a class = "text-links"> Map </a>
+ 
+ <button class = "searchbar">
+Search Bar
+ </button>
+ <a class = "text-links"> About Us </a>
+ </div>
+ <div class = "list?">
+ </div>
+ </nav>
+ 
+ </header>
+  
+  <div id="map"></div>
+
+  
+  <script src="mapdata.js"></script>
+
+  
+  <script src="europemap.js"></script>
+<footer>
+</footer>
+</body>
+</html>

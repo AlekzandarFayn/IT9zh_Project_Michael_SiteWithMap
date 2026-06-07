@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+.blur-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  z-index: 9998;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 9999;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(39, 66, 107,1) 0%,
+    rgba(39, 66, 107,0.6) 40%,
+    rgba(39, 66, 107,0) 100%
+  );
+
+  
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+.text-links{
+font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.text-links:hover {
+  color:  rgb(198, 195, 195);
+  transform: scale(1.6);
+ 
+}
+.searchbar{
+border-radius:15px;
+width: 120px;
+height:30px;
+font-size: 20px;
+font-family: "Times New Roman";
+transition: transform 0.25s ease;
+}
+.searchbar:hover{
+background-color: rgb(175, 175, 175);
+transform: scale(1.3);
+}
+.list {
+  margin-left: auto;   /* бута го вдясно */
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+  margin-top:50px;
+}
+.list-icon {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);   /* прави я бяла */
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.list-icon:hover {
+  filter: brightness(0.7) invert(1); /* прави я сива */
+}
+
+
+
+
+
+.blur-footer{
+position: fixed;
+  bottom: 0;                     /* вместо top: 0 */
+  left: 0;
+  width: 100%;
+  height: 70px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* fade нагоре, не надолу */
+  mask-image: linear-gradient(to top, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
+
+  z-index: 9998;
+}
+footer{
+ position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 9999;
+  
+
+  background: linear-gradient(
+    to top,
+    rgba(39, 66, 107,1) 0%,
+    rgba(39, 66, 107,0.6) 40%,
+    rgba(39, 66, 107,0) 100%
+  );
+  }
+.current-location
+{
+color: white;
+font-size:40px;
+text-align:center;
+margin: 10px;
+}
+
+
+
+
+
+ 
+</style>
+<head>
+
+  <title>EU Map</title>
+</head>
+<body>
+<div class = "blur-header"></div>
+ <header>
+ 
+ <nav class = "nav-bar">
+ <div class = "logo">
+ <img alt = "Logo" >
+ </div>
+ 
+ <div class = "nav-center">
+ <a class = "text-links"> Map </a>
+ 
+ <button class = "searchbar">
+Search Bar
+ </button>
+ <a class = "text-links"> About Us </a>
+ </div>
+ <div class = "list">
+ <img src = "list.png" class = "list-icon">
+ </div>
+ </nav>
+ 
+ </header>
+ <main>
+  <div id="map"></div>
+
+  
+  <script src="mapdata.js"></script>
+
+  
+  <script src="europemap.js"></script>
+  </main>
+  <div class="blur-footer">
+  </div>
+<footer>
+<h1 class = "current-location"> "CURRENT LOCATION:______"</h1>    <!--tva e za stranata, vurhu koqto e mishkata, alek*/-->
+</footer>
+</body>
+</html>

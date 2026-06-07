@@ -1,0 +1,17 @@
+query "countries/{slug}" verb=GET {
+  api_group = "Simple Server"
+
+  input {
+    text slug
+  }
+
+  stack {
+    db.get countries {
+      field_name = "slug"
+      field_value = $input.slug
+    } as $country
+  }
+
+  response = $country
+  guid = "zVeBdIgbM7vTsCDshPU2q9JnNx8"
+}

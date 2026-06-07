@@ -1,0 +1,6 @@
+// API group for the simple server example.
+// A simple server-like API group with basic endpoints.
+api_group "Simple Server" {
+  canonical = "simple-server"
+  guid = "ivHBtbLQW8MLSsQdd0UGr_ykzUM"
+}

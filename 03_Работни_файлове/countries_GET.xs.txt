@@ -1,0 +1,15 @@
+query countries verb=GET {
+  api_group = "Simple Server"
+
+  input {
+  }
+
+  stack {
+    db.query countries {
+      return = {type: "list"}
+    } as $countries
+  }
+
+  response = $countries
+  guid = "VZIbLZwIVbZCZ8ghbHTmAHApEUI"
+}

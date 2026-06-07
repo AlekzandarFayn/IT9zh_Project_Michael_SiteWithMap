@@ -1,0 +1,23 @@
+table countries {
+  auth = false
+
+  schema {
+    int id
+    timestamp created_at?=now
+    text slug
+    text name
+    text history
+    text natural_landmarks
+    text geography_and_economy
+    text culture
+    text[] interesting_facts
+    text[] photos
+  }
+
+  index = [
+    {type: "primary", field: [{name: "id"}]}
+    {type: "btree|unique", field: [{name: "slug"}]}
+  ]
+
+  guid = "P3p9CVtMA3jRWeMGGKOv8jFVW0c"
+}

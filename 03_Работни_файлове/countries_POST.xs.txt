@@ -1,0 +1,32 @@
+query countries verb=POST {
+  api_group = "Simple Server"
+
+  input {
+    text slug
+    text name
+    text history
+    text natural_landmarks
+    text geography_and_economy
+    text culture
+    text[] interesting_facts
+    text[] photos
+  }
+
+  stack {
+    db.add countries {
+      data = {
+        slug                 : $input.slug
+        name                 : $input.name
+        history              : $input.history
+        natural_landmarks    : $input.natural_landmarks
+        geography_and_economy: $input.geography_and_economy
+        culture              : $input.culture
+        interesting_facts    : $input.interesting_facts
+        photos               : $input.photos
+      }
+    } as $new_country
+  }
+
+  response = $new_country
+  guid = "GHh1gP9kAC0niCt9znV3TaoI9go"
+}
